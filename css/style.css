@@ -1,0 +1,210 @@
+/* Remove os espaços padrão */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #173c2c;
+}
+
+/* Logo e nome */
+header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 25px;
+  background-color: white;
+}
+
+header img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+header h2 {
+  font-size: 22px;
+}
+
+/* Espaço do cartão */
+main {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 0 20px;
+
+  /* Dá profundidade ao giro */
+  perspective: 1200px;
+}
+
+/* Cartão que vai girar */
+.cartao {
+  display: grid;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Classe adicionada pelo JavaScript */
+.cartao.girado {
+  transform: rotateY(180deg);
+}
+
+/* As duas faces ocupam o mesmo espaço */
+.frente,
+.verso {
+  grid-area: 1 / 1;
+  min-width: 0;
+  min-height: 420px;
+  padding: 40px;
+  border-radius: 40px;
+  background-color: #123626;
+
+  /* Esconde a face que está virada para trás */
+  backface-visibility: hidden;
+}
+
+/* Frente */
+.frente {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.frente p:first-child {
+  padding: 7px 14px;
+  margin-bottom: 25px;
+  border-radius: 20px;
+  background-color: #405e4e;
+  color: #a3ff12;
+  font-size: 14px;
+}
+
+.frente h1 {
+  margin-bottom: 20px;
+  color: white;
+  font-size: 42px;
+  font-weight: normal;
+}
+
+.frente p {
+  color: #c4c4c4;
+  font-size: 22px;
+  line-height: 1.5;
+}
+
+/* Botões */
+button {
+  padding: 14px 20px;
+  border: none;
+  border-radius: 18px;
+  background-color: #a3ff12;
+  color: #123626;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #baff52;
+}
+
+#descobrir {
+  align-self: flex-end;
+  margin-top: 25px;
+}
+
+/* Verso */
+.verso {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-content: center;
+
+  /* Começa virado para trás */
+  transform: rotateY(180deg);
+
+  /* Impede cliques enquanto está escondido */
+  pointer-events: none;
+}
+
+.cartao.girado .frente {
+  pointer-events: none;
+}
+
+.cartao.girado .verso {
+  pointer-events: auto;
+}
+
+/* Quatro cards */
+.card {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  column-gap: 15px;
+  align-items: center;
+  padding: 18px;
+  border-radius: 14px;
+  background-color: white;
+}
+
+.card img {
+  grid-column: 1;
+  grid-row: 1 / 4;
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.card h2 {
+  grid-column: 2;
+  font-size: 17px;
+  margin-bottom: 6px;
+}
+
+.card p {
+  grid-column: 2;
+  color: #66746c;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.card a {
+  grid-column: 2;
+  margin-top: 8px;
+  color: #173c2c;
+  font-size: 14px;
+}
+
+#voltar {
+  grid-column: 1 / -1;
+  justify-self: end;
+}
+
+/* Adaptação para celular */
+@media (max-width: 600px) {
+  main {
+    margin: 25px auto;
+    padding: 0 15px;
+  }
+
+  .frente,
+  .verso {
+    padding: 25px;
+    border-radius: 25px;
+  }
+
+  .frente h1 {
+    font-size: 30px;
+  }
+
+  .frente p {
+    font-size: 18px;
+  }
+
+  .verso {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
