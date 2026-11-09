@@ -1,0 +1,43 @@
+:root {
+  /* CORES */
+
+  --verde-escuro: #123524;
+  --verde-claro: #e8f7ef;
+  --verde: #31a75c;
+  --verde-destaque: #14ae5c;
+  --verde-limao: #98ff09;
+
+  --branco: #ffffff;
+
+  --cinza: #737070;
+  --cinza-claro: #d9d9d9;
+  --cinza-medio: #c0c0c0;
+
+  --vermelho: #d32f2f;
+
+  /* FONTES */
+
+  --fonte-principal: 'Poppins', sans-serif;
+
+  --texto-pequeno: 12px;
+  --texto-padrao: 14px;
+  --texto-medio: 16px;
+  --texto-grande: 20px;
+  --titulo: 24px;
+
+  /* Tamanhos */
+
+  --texto-pequeno: 12px;
+  --texto-padrao: 14px;
+  --texto-medio: 16px;
+  --texto-grande: 18px;
+  --titulo: 24px;
+  --titulo-principal: 28px;
+
+  /* Pesos */
+
+  --peso-normal: 400;
+  --peso-medio: 500;
+  --peso-semibold: 600;
+  --peso-bold: 700;
+}
