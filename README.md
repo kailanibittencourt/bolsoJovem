@@ -49,6 +49,19 @@ A tela está sendo desenvolvida para apresentar as movimentações financeiras d
 
 Os elementos que terão seus valores atualizados possuem identificadores (`id`) para permitir futuras alterações com JavaScript. A tela também está sendo preparada para receber uma barra de pesquisa, filtros e uma tabela com as movimentações financeiras.
 
+## Como o Meu painel funciona
+
+O Meu painel reúne o resumo financeiro do usuário em uma única página. O HTML define a estrutura, o CSS cuida da aparência e o JavaScript guarda as transações e calcula o que aparece em cada bloco. Quando uma transação muda, os blocos são atualizados sem recarregar a página.
+
+- Cartões de resumo — somam receitas e despesas; o saldo é a receita menos a despesa, e a barra mostra o gasto sobre o limite do mês.
+- Fluxo Semanal — os botões "Esta semana" e "Semana anterior" trocam os dados do gráfico, e a barra de maior valor fica em verde-limão.
+- Últimos Gastos — as abas "Todos", "Receitas" e "Despesas" filtram a lista por tipo.
+- Metas Financeiras — a barra de progresso mostra o valor atual dividido pelo total da meta.
+- Jornada Financeira — mostra as missões concluídas e soma o XP de cada missão finalizada.
+- Botões — "Adicionar Transação" abre um formulário e atualiza todos os blocos; "Ver Relatório", "Ver todas" e "Aprenda agora" levam às outras telas.
+
+Para verificar esse comportamento, abra o Meu painel, alterne o período do gráfico, troque as abas de Últimos Gastos e adicione uma transação. O resultado esperado é que cada ação atualize os blocos relacionados.
+
 ## Equipe
 
 Projeto desenvolvido pela equipe Bolso Jovem no PROA.
