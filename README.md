@@ -1,23 +1,26 @@
-#bolsoJovem
-O Bolso Jovem é um organizador financeiro desenvolvido como projeto final
-do curso de Front-end do PROA. Ele foi pensado para jovens que querem
-acompanhar os pequenos gastos do dia a dia e entender para onde vai o dinheiro.
+# bolsoJovem
+
+O Bolso Jovem é um organizador financeiro desenvolvido como projeto final do curso de Front-end do PROA. Ele foi pensado para jovens que querem acompanhar os pequenos gastos do dia a dia e entender para onde vai o dinheiro.
 
 ## O que já foi desenvolvido
 
 - Tela inicial com o menu Início, Meus Registros e Jornada Financeira.
 - Cartão interativo que gira ao clicar em “+ Descubra mais aqui!”.
+- Estrutura inicial da tela Meus Registros, com Header e Footer integrados.
+- Estrutura dos três cards financeiros: Saldo Disponível, Receitas do Mês e Despesas do Mês.
 
 ## Funcionalidades planejadas
 
 - Registrar, editar e excluir receitas e despesas.
-- Filtrar registros por categoria.
-- Consultar saldo, resumo de gastos e gráficos mensais e anuais.
+- Pesquisar movimentações por descrição, valor ou categoria.
+- Filtrar registros por tipo e categoria.
+- Consultar saldo, resumo de receitas e despesas e gráficos mensais e anuais.
+- Atualizar automaticamente os valores dos cards conforme as movimentações cadastradas.
+- Organizar os registros por meio de paginação.
 
 ## Ideia para uma versão futura
 
-Usar o WhatsApp com IA para registrar gastos e consultar informações
-financeiras. A integração é uma proposta para apresentação.
+Usar o WhatsApp com IA para registrar gastos e consultar informações financeiras. A integração é uma proposta para apresentação.
 
 ## Tecnologias
 
@@ -26,18 +29,25 @@ HTML, CSS e JavaScript.
 ## Estrutura do projeto
 
 - `index.html` — página de entrada do site.
-- `[caminho do CSS]` — estilos da tela inicial e animação do cartão.
-- `[caminho do JavaScript]` — comportamento do cartão ao clicar no botão.
+- `pages/meusRegistros.html` — estrutura da tela de movimentações financeiras.
+- `components/header.html` e `components/footer.html` — componentes de navegação reutilizados nas páginas.
+- `css/variables.css` — variáveis de cores e fontes.
+- `css/components.css` — estilos do Header, Footer e componentes compartilhados.
+- `[caminho do CSS]` — estilos específicos das páginas.
+- `[caminho do JavaScript]` — funcionalidades e interações do projeto.
 - `[caminho das imagens]` — imagens e ícones usados na interface.
 
 ## Como a tela inicial funciona
 
-O HTML contém o botão “+ Descubra mais aqui!” e as duas faces do cartão.
-Ao clicar no botão, o JavaScript muda o estado do cartão, e o CSS aplica
-a rotação que revela o verso.
+O HTML contém o botão “+ Descubra mais aqui!” e as duas faces do cartão. Ao clicar no botão, o JavaScript muda o estado do cartão, e o CSS aplica a rotação que revela o verso.
 
-Para verificar esse comportamento, abra a tela inicial e clique no botão.
-O resultado esperado é que o cartão gire e mostre o verso.
+Para verificar esse comportamento, abra a tela inicial e clique no botão. O resultado esperado é que o cartão gire e mostre o verso.
+
+## Como a tela Meus Registros funciona
+
+A tela está sendo desenvolvida para apresentar as movimentações financeiras do usuário. Sua estrutura conta com três cards que exibem o saldo disponível, o total de receitas e o total de despesas do mês.
+
+Os elementos que terão seus valores atualizados possuem identificadores (`id`) para permitir futuras alterações com JavaScript. A tela também está sendo preparada para receber uma barra de pesquisa, filtros e uma tabela com as movimentações financeiras.
 
 ## Equipe
 
