@@ -19,11 +19,16 @@ acompanhar os pequenos gastos do dia a dia e entender para onde vai o dinheiro.
 Usar o WhatsApp com IA para registrar gastos e consultar informações
 financeiras. A integração é uma proposta para apresentação.
 
-## Como abrir a tela inicial
+## Tecnologias
 
-1. Baixe ou clone o repositório.
-2. Localize o arquivo `index.html` e abra-o no navegador.
-3. Clique em “+ Descubra mais aqui!” para testar o cartão.
+HTML, CSS e JavaScript.
+
+## Estrutura do projeto
+
+- `index.html` — página de entrada do site.
+- `[caminho do CSS]` — estilos da tela inicial e animação do cartão.
+- `[caminho do JavaScript]` — comportamento do cartão ao clicar no botão.
+- `[caminho das imagens]` — imagens e ícones usados na interface.
 
 ## Como a tela inicial funciona
 
@@ -33,10 +38,6 @@ a rotação que revela o verso.
 
 Para verificar esse comportamento, abra a tela inicial e clique no botão.
 O resultado esperado é que o cartão gire e mostre o verso.
-
-## Tecnologias
-
-HTML, CSS e JavaScript.
 
 ## Equipe
 
