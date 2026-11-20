@@ -25,6 +25,15 @@ financeiras. A integração é uma proposta para apresentação.
 2. Localize o arquivo `index.html` e abra-o no navegador.
 3. Clique em “+ Descubra mais aqui!” para testar o cartão.
 
+## Como a tela inicial funciona
+
+O HTML contém o botão “+ Descubra mais aqui!” e as duas faces do cartão.
+Ao clicar no botão, o JavaScript muda o estado do cartão, e o CSS aplica
+a rotação que revela o verso.
+
+Para verificar esse comportamento, abra a tela inicial e clique no botão.
+O resultado esperado é que o cartão gire e mostre o verso.
+
 ## Tecnologias
 
 HTML, CSS e JavaScript.
