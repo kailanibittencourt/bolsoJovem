@@ -1,0 +1,409 @@
+/* Cards Financeiros */
+
+.cards-financeiros {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding: 30px 5%;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  background-color: var(--branco);
+  border: 1px solid var(--cinza-claro);
+  border-radius: 12px;
+}
+
+.titulo-cards {
+  font-size: var(--texto-padrao);
+  font-weight: var(--peso-semibold);
+  color: var(--cinza);
+  margin-bottom: 20px;
+}
+
+.valor-cards {
+  font-size: var(--titulo);
+  font-weight: var(--peso-bold);
+  color: var(--verde-escuro);
+  margin-bottom: 12px;
+}
+
+.economia-mes {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.economia-mes img {
+  width: 18px;
+  height: 18px;
+}
+
+#texto-saldo {
+  font-size: var(--texto-pequeno);
+  color: var(--cinza);
+}
+
+#data-saldo,
+#entradas-receitas,
+#comparativo-receitas,
+#limite-despesa,
+#porcentagem-despesa {
+  font-size: var(--texto-pequeno);
+  color: var(--cinza);
+}
+
+.icon-seta {
+  width: 24px;
+  height: 24px;
+  align-self: flex-end;
+  margin-bottom: 8px;
+}
+
+/* Barra de Pesquisa e Filtros */
+
+.filtros-registros {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 10px 5%;
+}
+
+.campo-pesquisa {
+  flex: 1;
+  position: relative;
+}
+
+#pesquisa-registros {
+  width: 100%;
+  padding: 12px 16px 12px 42px;
+  border: 1px solid var(--cinza-claro);
+  border-radius: 10px;
+  background-color: var(--verde-claro);
+  color: var(--verde-escuro);
+  font-size: var(--texto-padrao);
+  outline: none;
+  transition: border-color 0.4s ease;
+}
+
+#pesquisa-registros:focus {
+  border-color: var(--verde-escuro);
+}
+
+.icone-pesquisa {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.filtros-tipo {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 10px;
+  background-color: var(--verde-claro);
+}
+
+.filtros-tipo button {
+  padding: 9px 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: transparent;
+  color: var(--verde-escuro);
+  font-size: var(--texto-pequeno);
+  cursor: pointer;
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease;
+}
+
+.filtros-tipo button:hover {
+  background-color: var(--verde-escuro);
+  color: var(--branco);
+}
+
+.filtros-tipo .filtro-ativo {
+  background-color: var(--verde-escuro);
+  color: var(--branco);
+}
+
+.filtro-categoria select {
+  padding: 12px 16px;
+  border: 1px solid var(--cinza-claro);
+  border-radius: 10px;
+  background-color: var(--branco);
+  color: var(--verde-escuro);
+  font-size: var(--texto-padrao);
+  cursor: pointer;
+  transition: border-color 0.4s ease;
+}
+
+.filtro-categoria select:hover {
+  border-color: var(--verde-escuro);
+}
+
+/* Tabela de Movimentações */
+
+.tabela-registros {
+  margin: 20px 5%;
+  padding: 10px 12px 0;
+  background-color: var(--branco);
+  border: 1px solid var(--cinza-claro);
+  border-radius: 12px;
+  overflow-x: auto;
+}
+
+.tabela-registros table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: fixed;
+  text-align: left;
+}
+
+.tabela-registros th {
+  padding: 14px 16px;
+  background-color: var(--verde-claro);
+  color: var(--verde-escuro);
+  font-size: var(--texto-pequeno);
+  font-weight: var(--peso-semibold);
+}
+
+.tabela-registros th:first-child {
+  border-radius: 10px 0 0 10px;
+}
+
+.tabela-registros th:last-child {
+  border-radius: 0 10px 10px 0;
+}
+
+/* Largura das Colunas */
+
+.tabela-registros th:nth-child(1) {
+  width: 13%;
+}
+
+.tabela-registros th:nth-child(2) {
+  width: 34%;
+}
+
+.tabela-registros th:nth-child(3) {
+  width: 16%;
+}
+
+.tabela-registros th:nth-child(4) {
+  width: 13%;
+}
+
+.tabela-registros th:nth-child(5) {
+  width: 14%;
+}
+
+.tabela-registros th:nth-child(6) {
+  width: 10%;
+  text-align: center;
+}
+
+.tabela-registros td {
+  padding: 12px;
+  color: var(--verde-escuro);
+  font-size: var(--texto-pequeno);
+  border-bottom: 1px solid var(--cinza-claro);
+}
+
+.tabela-registros tbody tr:hover {
+  background-color: var(--verde-claro);
+}
+
+.tabela-registros tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Descrição da Movimentação */
+
+.descricao-registro {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+.descricao-registro img {
+  width: 28px;
+  height: 28px;
+  padding: 6px;
+  background-color: var(--verde-claro);
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+.categoria {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background-color: var(--verde-claro);
+  color: var(--verde-escuro);
+  font-size: 11px;
+}
+
+.tipo {
+  font-size: var(--texto-pequeno);
+  font-weight: var(--peso-medio);
+  white-space: nowrap;
+}
+
+.tipo.receita,
+.valor.receita {
+  color: var(--verde);
+}
+
+.tipo.despesa,
+.valor.despesa {
+  color: var(--vermelho);
+}
+
+.valor {
+  font-weight: var(--peso-semibold);
+  white-space: nowrap;
+}
+
+/* Ações da Movimentação */
+
+.botoes-acoes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.botoes-acoes button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 4px;
+  border: none;
+  border-radius: 5px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.4s ease;
+}
+
+.botoes-acoes button:hover {
+  background-color: var(--verde-claro);
+}
+
+.botoes-acoes img {
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+
+/* Tabela Vazia */
+
+.registro-vazio td {
+  padding: 30px 12px;
+  text-align: center;
+  color: var(--cinza);
+}
+
+/* Paginação */
+
+.paginacao-registros {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 10px;
+}
+
+.paginacao-registros p {
+  color: var(--cinza);
+  font-size: var(--texto-pequeno);
+}
+
+.botoes-paginacao {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.botoes-paginacao button {
+  min-width: 28px;
+  padding: 7px;
+  border: none;
+  border-radius: 6px;
+  background-color: transparent;
+  color: var(--verde-escuro);
+  font-size: var(--texto-pequeno);
+  cursor: pointer;
+  transition: background-color 0.4s ease;
+}
+
+.botoes-paginacao button:hover:not(:disabled) {
+  background-color: var(--verde-claro);
+}
+
+.botoes-paginacao button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.botoes-paginacao .pagina-ativa {
+  background-color: var(--verde-escuro);
+  color: var(--branco);
+}
+
+/* Responsividade */
+
+@media (max-width: 1023px) {
+  .cards-financeiros {
+    gap: 16px;
+  }
+
+  .filtros-registros {
+    flex-wrap: wrap;
+  }
+
+  .campo-pesquisa {
+    flex-basis: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .cards-financeiros {
+    grid-template-columns: 1fr;
+    padding: 20px 5%;
+  }
+
+  .filtros-registros {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filtros-tipo {
+    justify-content: center;
+  }
+
+  .filtro-categoria select {
+    width: 100%;
+  }
+
+  .tabela-registros {
+    margin: 20px 3%;
+  }
+
+  .paginacao-registros {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
