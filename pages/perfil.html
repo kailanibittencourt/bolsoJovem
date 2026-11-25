@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../css/variables.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/pages/perfil.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perfil</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo-container">
+        <a href="#" class="logo-header">
+          <img
+            src="../assets/img/fundo-verde.svg"
+            alt="Bolso Jovem logo"
+            class="logo-img"
+          />
+          <p href="#" class="logo-titulo">Bolso <span>Jovem</span></p>
+        </a>
+      </div>
+      <nav class="nav-header" aria-label="Navegação principal">
+        <ul class="nav-list-header">
+          <li>
+            <a href="../index.html" class="nav-link"> Início </a>
+          </li>
+
+          <li>
+            <a
+              href="../pages/meusRegistros.html"
+              class="nav-link"
+              aria-current="page"
+            >
+              Meus Registros
+            </a>
+          </li>
+
+          <li>
+            <a href="../pages/jornadaFinanceira.html" class="nav-link">
+              Jornada Financeira
+            </a>
+          </li>
+
+          <li>
+            <a href="../pages/assinarPremium.html" class="nav-link">
+              Assinar Premium
+              <span class="pro-pequeno">PRO</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="btns-header">
+        <a href="#" class="btn-header">+ Novo Registro</a>
+        <button type="button" class="menu-hamburguer-header">
+          <img
+            src="../assets/icon/menu-hamburguer.svg"
+            alt="Botão hamburguer"
+          />
+        </button>
+        <a href="#" class="perfil-header"
+          ><img src="../assets/img/perfil.svg" alt="Meu perfil"
+        /></a>
+      </div>
+    </header>
+
+    <!-- CONTEÚDO -->
+    <main class="pagina">
+      <h1>Meu Perfil</h1>
+
+      <!-- Cartão do usuário -->
+      <section class="card perfil-topo" aria-label="Resumo do perfil">
+        <div class="avatar-grande">
+          <svg
+            id="icone-foto"
+            viewBox="0 0 48 48"
+            width="44"
+            height="44"
+            fill="none"
+            stroke="#c9f56e"
+            stroke-width="2.5"
+            aria-hidden="true"
+          >
+            <circle cx="24" cy="15" r="8" />
+            <rect x="10" y="28" width="28" height="12" rx="6" />
+          </svg>
+          <img id="foto" alt="Foto de perfil" hidden />
+        </div>
+        <div class="perfil-info">
+          <h2 id="nome-exibido">Nome</h2>
+          <p>
+            <span id="email-exibido">E-mail</span>
+            <span class="ponto">•</span> Plano da pessoa
+          </p>
+        </div>
+        <input type="file" id="arquivo-foto" accept="image/*" hidden />
+        <button type="button" class="btn btn-escuro" id="btn-foto">
+          Editar Foto
+        </button>
+      </section>
+
+      <!-- Estatísticas -->
+      <section class="estatisticas" aria-label="Estatísticas">
+        <article class="card stat">
+          <span class="rotulo">Rank atual</span>
+          <strong>Organizador</strong>
+          <span class="xp">650 XP</span>
+        </article>
+        <article class="card stat">
+          <span class="rotulo">Registros</span>
+          <strong>24 Movimentações</strong>
+          <span class="rotulo">Desde março de 2025</span>
+        </article>
+        <article class="card stat">
+          <span class="rotulo">Conquistas</span>
+          <strong>4 Desbloqueadas</strong>
+        </article>
+      </section>
+
+      <!-- Dados pessoais -->
+      <section class="card dados" aria-labelledby="titulo-dados">
+        <h2 id="titulo-dados">Dados pessoais</h2>
+
+        <form id="form-perfil" novalidate>
+          <div class="campos">
+            <div class="campo">
+              <label for="nome">Nome</label>
+              <input
+                type="text"
+                id="nome"
+                name="nome"
+                placeholder="Seu nome"
+                autocomplete="name"
+                required
+                minlength="2"
+                maxlength="60"
+              />
+              <small class="erro" id="erro-nome" role="alert"></small>
+            </div>
+
+            <div class="campo">
+              <label for="email">E-mail</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Seu e-mail"
+                autocomplete="email"
+                required
+              />
+              <small class="erro" id="erro-email" role="alert"></small>
+            </div>
+
+            <div class="campo">
+              <label for="nascimento">Data de nascimento</label>
+              <input
+                type="date"
+                id="nascimento"
+                name="nascimento"
+                min="1900-01-01"
+                required
+              />
+              <small class="erro" id="erro-nascimento" role="alert"></small>
+            </div>
+
+            <div class="campo">
+              <label for="instituicao">Instituição de ensino</label>
+              <input
+                type="text"
+                id="instituicao"
+                name="instituicao"
+                placeholder="Universidade"
+                maxlength="80"
+              />
+              <small class="erro" id="erro-instituicao" role="alert"></small>
+            </div>
+          </div>
+
+          <div class="form-rodape">
+            <button type="submit" class="btn btn-lima">
+              Salvar alterações
+            </button>
+            <p class="sucesso" id="mensagem" role="status"></p>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="logo-container-footer">
+        <a href="#" class="logo-footer">
+          <img
+            src="../assets/img/fundo-verde.svg"
+            alt=""
+            class="logo-img-footer"
+          />
+          <p class="logo-titulo-footer">Bolso <span>Jovem</span></p>
+        </a>
+      </div>
+
+      <nav class="nav-footer" aria-label="Navegação secundaria">
+        <ul class="nav-list-footer">
+          <li><a href="#" class="nav-link-footer">Termos de Uso</a></li>
+          <li><a href="#" class="nav-link-footer">Privacidade</a></li>
+          <li><a href="#" class="nav-link-footer">Ajuda e Suporte</a></li>
+          <li><a href="#" class="nav-link-footer">Educação Financeira</a></li>
+        </ul>
+      </nav>
+
+      <div class="direitos-footer">
+        <a href="#" class="link-direiros"
+          >© 2026 Bolso Jovem. Todos os direitos reservados.</a
+        >
+      </div>
+    </footer>
+
+    <script src="../js/pages/perfil.js"></script>
+  </body>
+</html>
