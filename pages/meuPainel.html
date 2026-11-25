@@ -2,8 +2,14 @@
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/variables.css" />
     <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/pages/meuPainel.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Meu Painel</title>
   </head>
@@ -63,23 +69,289 @@
       </div>
     </header>
     <main>
-      <div class="subtitulo">
-        <h6>Seu dinheiro mais organizado</h6>
+      <!-- HERO -->
+      <section class="hero">
+        <span class="tag">✦ Seu dinheiro mais organizado</span>
+        <h1>Pequenos gastos.<br />Mais controle no seu bolso.</h1>
+        <p>
+          Registre o que entra e o que sai. Entenda seus hábitos e acompanhe
+          suas metas em um só lugar de forma simples.
+        </p>
+        <div class="hero-acoes">
+          <button type="button" class="btn btn-lima" id="btn-transacao">
+            + Adicionar Transação
+          </button>
+          <a href="#fluxo" class="btn btn-borda">📈 Ver Relatório</a>
+        </div>
+      </section>
+
+      <!-- RESUMO -->
+      <section class="grid-resumo" aria-label="Resumo do mês">
+        <article class="card resumo">
+          <div class="topo">
+            <span class="rotulo">SALDO DISPONÍVEL</span
+            ><span class="pill">↗ Economia do mês</span>
+          </div>
+          <div class="valor" id="saldo">R$ 1.420,50</div>
+          <div class="rodape">Atualizado hoje</div>
+        </article>
+
+        <article class="card resumo">
+          <div class="topo">
+            <span class="rotulo">RECEITA DO MÊS</span
+            ><span class="pill">↗</span>
+          </div>
+          <div class="valor verde" id="receita">+ R$ 1.800,00</div>
+          <div class="rodape">
+            <b class="verde">+12%</b> em relação ao mês anterior
+          </div>
+        </article>
+
+        <article class="card resumo">
+          <div class="topo">
+            <span class="rotulo">DESPESAS DO MÊS</span
+            ><span class="vermelho">↘</span>
+          </div>
+          <div class="valor vermelho" id="despesa">— R$ 1.300,00</div>
+          <div class="rodape">
+            <b class="verde">Dentro do limite</b> do orçamento
+          </div>
+        </article>
+
+        <article class="card resumo">
+          <div class="topo">
+            <span class="rotulo">RESERVAS 1º MÊS</span
+            ><span class="pill pill-lima">78%</span>
+          </div>
+          <div class="meta-linha">
+            <span>R$780,00</span><span>META: R$1.000</span>
+          </div>
+          <div class="barra barra-preta"><i style="width: 78%"></i></div>
+          <div class="rodape">
+            Faltam apenas R$ 220,00 para atingir sua meta!
+          </div>
+        </article>
+      </section>
+
+      <div class="duas-colunas">
+        <!-- COLUNA ESQUERDA -->
+        <div class="coluna">
+          <!-- Fluxo semanal -->
+          <section class="card" aria-labelledby="fluxo">
+            <div class="topo titulo-aba" style="align-items: flex-start">
+              <div>
+                <h2 id="fluxo">Fluxo Semanal</h2>
+                <p class="sub">
+                  Acompanhamento das entradas e saídas da semana atual
+                </p>
+              </div>
+              <div class="abas" id="abas-semana">
+                <button class="ativo" data-semana="atual">Esta semana</button>
+                <button data-semana="anterior">Semana anterior</button>
+              </div>
+            </div>
+
+            <div class="grafico">
+              <div class="eixo-y">
+                <span>250</span><span>200</span><span>150</span><span>100</span
+                ><span>50</span><span>0</span>
+              </div>
+              <div class="area" id="area-grafico">
+                <div class="col">
+                  <div class="b" style="height: 16.8%"></div>
+                  <span>Seg</span>
+                </div>
+                <div class="col">
+                  <div class="b" style="height: 47.2%"></div>
+                  <span>Ter</span>
+                </div>
+                <div class="col">
+                  <div class="b" style="height: 12%"></div>
+                  <span>Qua</span>
+                </div>
+                <div class="col">
+                  <div class="b" style="height: 36.8%"></div>
+                  <span>Qui</span>
+                </div>
+                <div class="col destaque">
+                  <div class="b" style="height: 83.2%"></div>
+                  <span>Sex</span>
+                </div>
+                <div class="col">
+                  <div class="b" style="height: 24%"></div>
+                  <span>Sáb</span>
+                </div>
+                <div class="col">
+                  <div class="b" style="height: 16.8%"></div>
+                  <span>Dom</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Últimos gastos -->
+          <section class="card" aria-labelledby="ultimos">
+            <div class="topo titulo-aba" style="align-items: flex-start">
+              <div>
+                <h2 id="ultimos">Últimos Gastos</h2>
+                <p class="sub">
+                  Histórico de movimentação recentes da sua conta
+                </p>
+              </div>
+              <div class="abas" id="abas-tipo">
+                <button class="ativo" data-tipo="todos">Todos</button>
+                <button data-tipo="receita">Receitas</button>
+                <button data-tipo="despesa">Despesas</button>
+              </div>
+            </div>
+
+            <ul class="lista" id="lista">
+              <li class="item" data-tipo="despesa">
+                <div class="icone i-laranja">🍴</div>
+                <div class="info">
+                  <b>Almoço Faculdade</b><small>Hoje, 12:40</small>
+                </div>
+                <span class="valor vermelho">— R$ 22,50</span>
+              </li>
+              <li class="item" data-tipo="receita">
+                <div class="icone i-verde">💼</div>
+                <div class="info"><b>Bolsa Estágio</b><small>Ontem</small></div>
+                <span class="valor verde">+ R$ 900,00</span>
+              </li>
+              <li class="item" data-tipo="despesa">
+                <div class="icone i-azul">📖</div>
+                <div class="info"><b>Livros</b><small>3 dias atrás</small></div>
+                <span class="valor vermelho">— R$ 45,00</span>
+              </li>
+              <li class="item" data-tipo="despesa">
+                <div class="icone i-roxo">📺</div>
+                <div class="info">
+                  <b>Assinatura Stream</b><small>5 dias atrás</small>
+                </div>
+                <span class="valor vermelho">— R$ 29,90</span>
+              </li>
+            </ul>
+          </section>
+        </div>
+
+        <!-- COLUNA DIREITA -->
+        <div class="coluna">
+          <!-- Metas -->
+          <section class="card" aria-labelledby="metas">
+            <div class="titulo-secao">
+              <h3 id="metas"><span class="icone">🎯</span>Metas Financeiras</h3>
+              <a href="#" class="ver-todas">Ver todas &gt;</a>
+            </div>
+
+            <div class="meta">
+              <div class="meta-topo">
+                <div>
+                  <b>📺 Compra uma TV</b><small>R$ 600 de R$ 2.400</small>
+                </div>
+                <span class="pill">25%</span>
+              </div>
+              <div class="barra"><i style="width: 25%"></i></div>
+              <span class="previsao">🗓 Previsão: 8 meses</span>
+            </div>
+
+            <div class="meta">
+              <div class="meta-topo">
+                <div>
+                  <b>📺 Reserva 1° Mês</b><small>R$ 780 de R$ 1.000</small>
+                </div>
+                <span class="pill">78%</span>
+              </div>
+              <div class="barra"><i style="width: 78%"></i></div>
+            </div>
+          </section>
+
+          <!-- Jornada -->
+          <section class="card" aria-labelledby="jornada">
+            <div class="titulo-secao">
+              <h3 id="jornada">
+                <span class="icone i-roxo">🎮</span>Jornada Financeira
+              </h3>
+              <a href="#" class="ver-todas">Ver todas &gt;</a>
+            </div>
+
+            <div class="missao">
+              <div class="avatar-missao">🕵️</div>
+              <div>
+                <b>Detetive Financeiro</b>
+                <small
+                  >Descubra qual categoria você mais gasta neste mês.</small
+                >
+                <span class="xp">⭐ + 40 XP</span>
+              </div>
+            </div>
+
+            <div class="meta-linha" style="margin-bottom: 6px">
+              <span>Seu progresso na jornada</span
+              ><b style="color: var(--texto)">2 de 6 Missões</b>
+            </div>
+            <div class="barra barra-lima"><i style="width: 33%"></i></div>
+          </section>
+
+          <!-- CTA -->
+          <aside class="cta">
+            <div class="icone">💡</div>
+            <h3>
+              Recebeu seu primeiro salário ou mesada e não sabe como dividir?
+            </h3>
+            <p>
+              Aprenda a organizar seu dinheiro com a regra 50/30/20 e construa
+              seus primeiros objetivos financeiros.
+            </p>
+            <a href="#" class="btn">Aprenda agora <span>→</span></a>
+          </aside>
+        </div>
       </div>
-<div class="container">
-<h2>Pequenos gastos</h2>
-  <h2>Mais controle no seu bolso.</h2>
-<p>Registre o que entra o que sai. Entenda seus habitos e acompanhe suas metas em um só lugar de forma simples.</p>
-</div>
-
-<div class="transação">
-  <h4>+ Adcionar transação</h4> 
-</div>
-<div class="Relatório">
-  <h4>Ver Relatório</h4>
-</div>
-
     </main>
+
+    <dialog class="modal" id="modal" aria-labelledby="modal-titulo">
+      <form id="form-transacao">
+        <h2 id="modal-titulo">Nova transação</h2>
+        <label class="campo"
+          >Descrição
+          <input
+            id="campo-desc"
+            type="text"
+            maxlength="40"
+            required
+            placeholder="Ex.: Lanche"
+          />
+        </label>
+        <label class="campo"
+          >Valor (R$)
+          <input
+            id="campo-valor"
+            type="number"
+            min="0.01"
+            step="0.01"
+            inputmode="decimal"
+            required
+            placeholder="0,00"
+          />
+        </label>
+        <label class="campo"
+          >Tipo
+          <select id="campo-tipo">
+            <option value="despesa">Despesa</option>
+            <option value="receita">Receita</option>
+          </select>
+        </label>
+        <label class="campo"
+          >Categoria
+          <select id="campo-cat"></select>
+        </label>
+        <div class="modal-acoes">
+          <button type="button" class="btn btn-claro" id="btn-cancelar">
+            Cancelar
+          </button>
+          <button type="submit" class="btn btn-escuro">Salvar</button>
+        </div>
+      </form>
+    </dialog>
 
     <footer class="footer">
       <div class="logo-container-footer">
@@ -108,5 +380,7 @@
         >
       </div>
     </footer>
+
+    <script src=""></script>
   </body>
 </html>
