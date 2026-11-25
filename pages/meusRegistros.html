@@ -4,16 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- Fonte Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="../css/variables.css" />
     <link rel="stylesheet" href="../css/components.css" />
     <link rel="stylesheet" href="../css/pages/meuRegistros.css" />
 
-    <title>Meus Registros</title>
+    <title>Meus Registros | Bolso Jovem</title>
   </head>
 
   <body>
     <!-- Header -->
-
     <header class="header">
       <div class="logo-container">
         <a href="#" class="logo-header">
@@ -28,10 +35,7 @@
 
       <nav class="nav-header" aria-label="Navegação principal">
         <ul class="nav-list-header">
-          <li>
-            <a href="../index.html" class="nav-link">Início</a>
-          </li>
-
+          <li><a href="../index.html" class="nav-link">Início</a></li>
           <li>
             <a
               href="../pages/meusRegistros.html"
@@ -41,17 +45,14 @@
               Meus Registros
             </a>
           </li>
-
           <li>
             <a href="../pages/jornadaFinanceira.html" class="nav-link">
               Jornada Financeira
             </a>
           </li>
-
           <li>
             <a href="../pages/assinarPremium.html" class="nav-link">
-              Assinar Premium
-              <span class="pro-pequeno">PRO</span>
+              Assinar Premium <span class="pro-pequeno">PRO</span>
             </a>
           </li>
         </ul>
@@ -75,54 +76,78 @@
     </header>
 
     <!-- Main -->
-
-    <main>
+    <main class="main-registros">
       <!-- Cards Financeiros -->
-
       <section class="cards-financeiros">
+        <!-- Card Saldo -->
         <div class="card saldo">
-          <h3 class="titulo-cards">SALDO DISPONÍVEL</h3>
+          <div class="card-cabecalho">
+            <h3 class="titulo-cards">SALDO DISPONÍVEL</h3>
 
-          <div class="economia-mes" id="economia-mes">
-            <img src="#" alt="" id="icone-economia-saldo" />
-            <p id="texto-saldo">Economia do mês</p>
+            <div class="icone-card saldo">
+              <img src="../assets/icon/piggy-bank.svg" alt="" />
+            </div>
           </div>
 
-          <h2 class="valor-cards" id="saldo-disponivel">R$ 0,00</h2>
-          <p id="data-saldo">Aguardando movimentações</p>
-          <img src="#" alt="" id="icone-status-saldo" />
+          <div class="card-conteudo">
+            <h2 class="valor-cards" id="saldo-disponivel">R$ 0,00</h2>
+          </div>
+
+          <div class="card-rodape">
+            <p id="data-saldo">Aguardando movimentações</p>
+          </div>
+
+          <div class="indicador-saldo">
+            <span>Economia do mês</span>
+            <img src="../assets/icon/trending-up.svg" alt="" />
+          </div>
         </div>
 
+        <!-- Card Receitas -->
         <div class="card receita">
-          <h3 class="titulo-cards">RECEITAS DO MÊS</h3>
+          <div class="card-cabecalho">
+            <h3 class="titulo-cards">RECEITAS DO MÊS</h3>
 
-          <img src="#" alt="" class="icon-seta" id="seta-receita" />
+            <div class="icone-card receita">
+              <img src="../assets/icon/arrow-up-right.svg" alt="" />
+            </div>
+          </div>
 
-          <h2 class="valor-cards" id="total-receitas">R$ 0,00</h2>
-          <p id="entradas-receitas">0 entradas</p>
-          <p id="comparativo-receitas">Nenhuma receita cadastrada</p>
+          <div class="card-conteudo">
+            <h2 class="valor-cards" id="total-receitas">R$ 0,00</h2>
+          </div>
+
+          <div class="card-rodape">
+            <p id="entradas-receitas">0 entradas</p>
+            <p id="comparativo-receitas">Nenhuma receita cadastrada</p>
+          </div>
         </div>
 
+        <!-- Card Despesas -->
         <div class="card despesas">
-          <h3 class="titulo-cards">DESPESAS DO MÊS</h3>
+          <div class="card-cabecalho">
+            <h3 class="titulo-cards">DESPESAS DO MÊS</h3>
 
-          <img src="#" alt="" class="icon-seta" id="seta-despesas" />
+            <div class="icone-card despesas">
+              <img src="../assets/icon/arrow-down-right.svg" alt="" />
+            </div>
+          </div>
 
-          <h2 class="valor-cards" id="total-despesas">R$ 0,00</h2>
-          <p id="limite-despesa">Aguardando movimentações</p>
-          <p id="porcentagem-despesa">0% gasto</p>
+          <div class="card-conteudo">
+            <h2 class="valor-cards" id="total-despesas">R$ 0,00</h2>
+          </div>
+
+          <div class="card-rodape">
+            <p id="limite-despesa">Aguardando movimentações</p>
+            <p id="porcentagem-despesa">0% gasto</p>
+          </div>
         </div>
       </section>
 
       <!-- Barra de Pesquisa e Filtros -->
-
       <section class="filtros-registros">
         <div class="campo-pesquisa">
-          <img
-            src="../assets/icon/pesquisa.svg"
-            alt=""
-            class="icone-pesquisa"
-          />
+          <img src="../assets/icon/search.svg" alt="" class="icone-pesquisa" />
 
           <input
             type="search"
@@ -136,9 +161,7 @@
           <button type="button" class="filtro-ativo" data-filtro="todos">
             Todos
           </button>
-
           <button type="button" data-filtro="receita">Receitas</button>
-
           <button type="button" data-filtro="despesa">Despesas</button>
         </div>
 
@@ -157,7 +180,6 @@
       </section>
 
       <!-- Tabela de Movimentações -->
-
       <section class="tabela-registros">
         <table>
           <thead>
@@ -179,7 +201,6 @@
         </table>
 
         <!-- Paginação -->
-
         <div class="paginacao-registros">
           <p id="total-registros">Mostrando 0 movimentações</p>
 
@@ -192,11 +213,9 @@
             >
               ‹
             </button>
-
             <button type="button" class="pagina-ativa" data-pagina="1">
               1
             </button>
-
             <button
               type="button"
               aria-label="Próxima página"
@@ -211,7 +230,6 @@
     </main>
 
     <!-- Footer -->
-
     <footer class="footer">
       <div class="logo-container-footer">
         <a href="#" class="logo-footer">
@@ -226,18 +244,10 @@
 
       <nav class="nav-footer" aria-label="Navegação secundária">
         <ul class="nav-list-footer">
-          <li>
-            <a href="#" class="nav-link-footer">Termos de Uso</a>
-          </li>
-          <li>
-            <a href="#" class="nav-link-footer">Privacidade</a>
-          </li>
-          <li>
-            <a href="#" class="nav-link-footer">Ajuda e Suporte</a>
-          </li>
-          <li>
-            <a href="#" class="nav-link-footer">Educação Financeira</a>
-          </li>
+          <li><a href="#" class="nav-link-footer">Termos de Uso</a></li>
+          <li><a href="#" class="nav-link-footer">Privacidade</a></li>
+          <li><a href="#" class="nav-link-footer">Ajuda e Suporte</a></li>
+          <li><a href="#" class="nav-link-footer">Educação Financeira</a></li>
         </ul>
       </nav>
 
@@ -247,5 +257,7 @@
         </small>
       </div>
     </footer>
+
+    <script src="../js/pages/meusRegistros.js"></script>
   </body>
 </html>
