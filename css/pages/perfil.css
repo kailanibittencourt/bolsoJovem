@@ -42,7 +42,6 @@ button {
   outline-offset: 2px;
 }
 
-/* ---------- Botões ---------- */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -71,7 +70,6 @@ button {
   color: #fff;
 }
 
-/* ---------- Página ---------- */
 .pagina {
   flex: 1;
   width: 100%;
@@ -90,7 +88,6 @@ button {
   border-radius: 20px;
 }
 
-/* Topo do perfil */
 .perfil-topo {
   display: flex;
   align-items: center;
@@ -131,7 +128,6 @@ button {
   margin: 0 2px;
 }
 
-/* Estatísticas */
 .estatisticas {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -163,7 +159,6 @@ button {
   border-radius: 6px;
 }
 
-/* Formulário */
 .dados {
   padding: 16px 20px 20px;
 }
@@ -217,59 +212,14 @@ button {
   font-size: 10px;
   color: var(--erro);
 }
-.form-rodape {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-top: 4px;
-  flex-wrap: wrap;
-}
-.form-rodape .btn {
-  border-radius: 10px;
-  font-size: 12px;
-  padding: 9px 16px;
-}
+
 .sucesso {
   font-size: 12px;
   font-weight: 600;
   color: #1f9a45;
 }
 
-/* ---------- Rodapé ---------- */
-.rodape {
-  display: flex;
-  align-items: center;
-  gap: 28px;
-  flex-wrap: wrap;
-  background: var(--verde-escuro);
-  color: #dfe9e3;
-  padding: 18px 32px;
-  font-size: 11px;
-}
-.rodape .logo {
-  color: #fff;
-}
-.rodape .logo em {
-  color: var(--lima-forte);
-}
-.rodape-links {
-  display: flex;
-  gap: 22px;
-  flex-wrap: wrap;
-}
-.rodape-links a:hover {
-  color: var(--lima);
-}
-.rodape p {
-  margin-left: auto;
-  color: #9db5a8;
-}
-
-/* ---------- Responsivo ---------- */
 @media (max-width: 760px) {
-  .header {
-    padding: 12px 16px;
-  }
   #btn-menu {
     display: grid;
   }
@@ -294,18 +244,8 @@ button {
   .perfil-topo {
     flex-wrap: wrap;
   }
-  .rodape {
-    padding: 18px 16px;
-  }
-  .rodape p {
-    margin-left: 0;
-  }
 }
-@media (max-width: 420px) {
-  .header-acoes .btn {
-    display: none;
-  }
-}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     transition: none !important;

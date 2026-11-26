@@ -44,7 +44,6 @@ button {
   padding: 0 20px 48px;
 }
 
-/* ---------- Hero ---------- */
 .hero {
   position: relative;
   background: var(--verde-escuro);
@@ -101,7 +100,6 @@ button {
   color: #fff;
 }
 
-/* ---------- Grid de resumo ---------- */
 .grid-resumo {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -130,11 +128,7 @@ button {
   font-size: 22px;
   font-weight: 700;
 }
-.resumo .rodape {
-  margin-top: auto;
-  font-size: 10px;
-  color: var(--muted);
-}
+
 .topo {
   display: flex;
   justify-content: space-between;
@@ -186,7 +180,6 @@ button {
   font-weight: 500;
 }
 
-/* ---------- Duas colunas ---------- */
 .duas-colunas {
   display: grid;
   grid-template-columns: 1.3fr 1fr;
@@ -211,7 +204,6 @@ button {
   max-width: 280px;
 }
 
-/* Abas (segmented control) */
 .abas {
   display: inline-flex;
   background: #e3e5e3;
@@ -233,7 +225,6 @@ button {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
 }
 
-/* Gráfico */
 .grafico {
   display: grid;
   grid-template-columns: 32px 1fr;
@@ -254,7 +245,6 @@ button {
   gap: 14px;
   padding: 0 8px 28px;
   border-bottom: 3px solid #d6d6d6;
-  /* linhas de grade: 5 intervalos (250, 200, 150, 100, 50) */
   background-image: linear-gradient(to bottom, #ececec 1px, transparent 1px);
   background-size: 100% 20%;
   background-repeat: repeat-y;
@@ -287,7 +277,6 @@ button {
   color: #444;
 }
 
-/* Lista de gastos */
 .lista {
   list-style: none;
   display: flex;
@@ -345,7 +334,6 @@ button {
   display: none;
 }
 
-/* Metas */
 .titulo-secao {
   display: flex;
   align-items: center;
@@ -401,7 +389,6 @@ button {
   color: var(--muted);
 }
 
-/* Jornada */
 .missao {
   display: flex;
   align-items: center;
@@ -443,7 +430,6 @@ button {
   font-weight: 700;
 }
 
-/* CTA */
 .cta {
   background: var(--verde-escuro);
   color: #fff;
@@ -473,7 +459,6 @@ button {
   width: 100%;
 }
 
-/* ---------- Responsivo ---------- */
 @media (max-width: 900px) {
   .grid-resumo {
     grid-template-columns: repeat(2, 1fr);
@@ -483,10 +468,6 @@ button {
   }
 }
 @media (max-width: 600px) {
-  .header {
-    padding: 10px 14px;
-    flex-wrap: wrap;
-  }
   .nav {
     order: 3;
     width: 100%;
@@ -511,7 +492,6 @@ button {
   }
 }
 
-/* ---------- Extras para o JavaScript ---------- */
 html {
   scroll-behavior: smooth;
 }
@@ -530,7 +510,6 @@ html {
   color: #fff;
 }
 
-/* Modal */
 .modal {
   border: 0;
   border-radius: 24px;

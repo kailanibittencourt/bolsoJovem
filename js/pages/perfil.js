@@ -1,6 +1,5 @@
 'use strict';
 
-/* ============ Utilidades ============ */
 const $ = (seletor, raiz = document) => raiz.querySelector(seletor);
 
 const CHAVE_PERFIL = 'bolsojovem:perfil';
@@ -22,7 +21,6 @@ function gravarStorage(chave, valor) {
   }
 }
 
-/* ============ Elementos ============ */
 const form = $('#form-perfil');
 const campos = {
   nome: $('#nome'),
@@ -33,7 +31,6 @@ const campos = {
 const mensagem = $('#mensagem');
 let temporizador;
 
-/* ============ Validação ============ */
 const REGEX_EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
 const validadores = {
@@ -66,13 +63,11 @@ function validarCampo(nome) {
   return !erro;
 }
 
-/* ============ Cartão do topo ============ */
 function atualizarCartao() {
   $('#nome-exibido').textContent = campos.nome.value.trim() || 'Nome';
   $('#email-exibido').textContent = campos.email.value.trim() || 'E-mail';
 }
 
-/* ============ Salvar ============ */
 function mostrarMensagem(texto, erro = false) {
   clearTimeout(temporizador);
   mensagem.textContent = texto;
@@ -103,7 +98,6 @@ form.addEventListener('submit', (evento) => {
   }
 });
 
-// limpa o erro enquanto a pessoa digita e valida ao sair do campo
 Object.keys(campos).forEach((nome) => {
   campos[nome].addEventListener('input', () => mostrarErro(nome));
   campos[nome].addEventListener('blur', () => {
@@ -111,7 +105,6 @@ Object.keys(campos).forEach((nome) => {
   });
 });
 
-/* ============ Foto de perfil ============ */
 const arquivo = $('#arquivo-foto');
 const foto = $('#foto');
 const iconeFoto = $('#icone-foto');
@@ -140,7 +133,6 @@ arquivo.addEventListener('change', () => {
   leitor.readAsDataURL(imagem);
 });
 
-/* ============ Menu (celular) ============ */
 const botaoMenu = $('#btn-menu');
 const menu = $('#menu');
 botaoMenu.addEventListener('click', () => {
@@ -154,8 +146,6 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-/* ============ Início ============ */
-// impede datas futuras no calendário
 campos.nascimento.max = new Date().toISOString().split('T')[0];
 
 const salvo = lerStorage(CHAVE_PERFIL);
