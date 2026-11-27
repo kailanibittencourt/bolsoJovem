@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="../css/variables.css" />
     <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/modal.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -56,17 +57,20 @@
         </ul>
       </nav>
       <div class="btns-header">
-        <a href="#" class="btn-header">+ Novo Registro</a>
+        <a href="#" class="btn-header abrir-modal" data-modal="modal-registro"
+          >+ Novo Registro</a
+        >
         <button type="button" class="menu-hamburguer-header">
           <img
             src="../assets/icon/menu-hamburguer.svg"
             alt="Botão hamburguer"
           />
         </button>
-        <a href="#" class="perfil-header"
+        <a href="#" class="perfil-header abrir-modal" data-modal="modal-login"
           ><img src="../assets/img/perfil.svg" alt="Meu perfil"
         /></a>
       </div>
     </header>
+    <script src="../js/modal.js"></script>
   </body>
 </html>
