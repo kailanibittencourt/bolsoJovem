@@ -1,5 +1,3 @@
-'use strict';
-
 const $ = (seletor, raiz = document) => raiz.querySelector(seletor);
 const $$ = (seletor, raiz = document) => [...raiz.querySelectorAll(seletor)];
 const BRL = new Intl.NumberFormat('pt-BR', {

@@ -1,5 +1,3 @@
-'use strict';
-
 const $ = (seletor, raiz = document) => raiz.querySelector(seletor);
 
 const CHAVE_PERFIL = 'bolsojovem:perfil';
