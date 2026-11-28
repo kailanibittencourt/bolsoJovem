@@ -7,6 +7,7 @@
     <!-- Fonte Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="../css/modal.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
@@ -20,13 +21,13 @@
   </head>
 
   <body>
-    <!-- Header -->
+    <!-- HEADER -->
     <header class="header">
       <div class="logo-container">
-        <a href="#" class="logo-header">
+        <a href="../index.html" class="logo-header">
           <img
             src="../assets/img/fundo-verde.svg"
-            alt="Bolso Jovem logo"
+            alt="Bolso Jovem"
             class="logo-img"
           />
           <p class="logo-titulo">Bolso <span>Jovem</span></p>
@@ -35,7 +36,10 @@
 
       <nav class="nav-header" aria-label="Navegação principal">
         <ul class="nav-list-header">
-          <li><a href="../index.html" class="nav-link">Início</a></li>
+          <li>
+            <a href="../index.html" class="nav-link">Início</a>
+          </li>
+
           <li>
             <a
               href="../pages/meusRegistros.html"
@@ -45,35 +49,492 @@
               Meus Registros
             </a>
           </li>
+
           <li>
-            <a href="../pages/jornadaFinanceira.html" class="nav-link">
+            <a href="../pages/jornandaFinanceira.html" class="nav-link">
               Jornada Financeira
             </a>
           </li>
+
           <li>
             <a href="../pages/assinarPremium.html" class="nav-link">
-              Assinar Premium <span class="pro-pequeno">PRO</span>
+              Assinar Premium
+              <span class="pro-pequeno">PRO</span>
             </a>
           </li>
         </ul>
       </nav>
 
       <div class="btns-header">
-        <a href="#" class="btn-header">+ Novo Registro</a>
+        <a href="#" class="btn-header abrir-modal" data-modal="modal-registro">
+          + Novo Registro
+        </a>
 
         <button
           type="button"
           class="menu-hamburguer-header"
           aria-label="Abrir menu"
+          aria-controls="menu-lateral"
+          aria-expanded="false"
         >
           <img src="../assets/icon/menu-hamburguer.svg" alt="" />
         </button>
 
-        <a href="#" class="perfil-header">
+        <a href="#" class="perfil-header abrir-modal" data-modal="modal-login">
           <img src="../assets/img/perfil.svg" alt="Meu perfil" />
         </a>
       </div>
     </header>
+
+    <!-- MENU LATERAL -->
+    <div class="menu-sobreposicao" id="menu-sobreposicao" hidden>
+      <aside
+        class="menu-lateral"
+        id="menu-lateral"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="menu-titulo"
+        tabindex="-1"
+      >
+        <!-- Cabeçalho do menu -->
+        <header class="menu-cabecalho">
+          <a href="../index.html" class="menu-logo">
+            <img src="../assets/icon/icon logo.png" alt="" />
+            <span>Bolso <strong>Jovem</strong></span>
+          </a>
+
+          <button type="button" class="menu-fechar" aria-label="Fechar menu">
+            &times;
+          </button>
+        </header>
+
+        <h2 class="menu-titulo-acessivel" id="menu-titulo">Menu principal</h2>
+
+        <!-- Navegação -->
+        <section class="menu-secao">
+          <h3>Navegação</h3>
+
+          <a href="../index.html" class="menu-link">
+            <span class="menu-icone">
+              <img src="../assets/icon/house.svg" alt="" />
+            </span>
+            Início
+          </a>
+
+          <a href="../pages/meusRegistros.html" class="menu-link">
+            <span class="menu-icone">
+              <img src="../assets/icon/receipt-text.svg" alt="" />
+            </span>
+            Meus Registros
+          </a>
+
+          <a href="../pages/jornandaFinanceira.html" class="menu-link">
+            <span class="menu-icone">
+              <img src="../assets/icon/clock.svg" alt="" />
+            </span>
+            Jornada Financeira
+          </a>
+        </section>
+
+        <!-- Espaço Premium -->
+        <section class="menu-secao">
+          <h3>Espaço Premium</h3>
+
+          <a href="../pages/assinarPremium.html" class="menu-link">
+            <span class="menu-icone">
+              <img src="../assets/icon/star.svg" alt="" />
+            </span>
+            Assinar Premium
+            <span class="menu-selo">PRO</span>
+          </a>
+        </section>
+
+        <!-- Outros -->
+        <section class="menu-secao menu-secao-outros">
+          <h3>Outros</h3>
+
+          <a href="#" class="menu-link abrir-modal" data-modal="modal-login">
+            <span class="menu-icone">
+              <img src="../assets/img/perfil.svg" alt="" />
+            </span>
+            Meu Perfil
+          </a>
+
+          <a href="#" class="menu-link abrir-modal" data-modal="modal-registro">
+            <span class="menu-icone">
+              <img src="../assets/icon/circle-plus.svg" alt="" />
+            </span>
+            Novo Registro
+          </a>
+        </section>
+
+        <!-- Divulgação Premium -->
+        <section class="menu-card-premium">
+          <strong>Desbloqueie seu potencial!</strong>
+
+          <p>
+            Tenha acesso a recursos exclusivos e aproveite ainda mais sua
+            experiência financeira.
+          </p>
+
+          <a href="../pages/assinarPremium.html" class="menu-card-botao">
+            Conhecer Premium
+          </a>
+        </section>
+      </aside>
+    </div>
+
+    <!-- MODAL CADASTRO -->
+    <dialog id="modal-cadastro" class="caixa-modal">
+      <button
+        type="button"
+        class="fechar-modal"
+        data-modal="modal-cadastro"
+        aria-label="Fechar modal"
+      >
+        X
+      </button>
+
+      <div class="topo-modal">
+        <a href="../index.html" class="menu-logo">
+          <img src="../assets/img/fundo-verde.svg" alt="Bolso Jovem" />
+          <span>Bolso <strong>Jovem</strong></span>
+        </a>
+
+        <h2>Crie sua Conta</h2>
+      </div>
+
+      <form id="form-cadastro" class="formulario-modal">
+        <div class="linha-dupla">
+          <div class="campo">
+            <label for="nome">Nome</label>
+            <input
+              type="text"
+              id="nome"
+              placeholder="Digite seu nome"
+              required
+            />
+          </div>
+
+          <div class="campo">
+            <label for="sobrenome">Sobrenome</label>
+            <input
+              type="text"
+              id="sobrenome"
+              placeholder="Digite seu sobrenome"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="linha-dupla">
+          <div class="campo">
+            <label for="cpf">CPF</label>
+            <input
+              type="text"
+              id="cpf"
+              placeholder="000.000.000-00"
+              maxlength="14"
+              required
+            />
+          </div>
+
+          <div class="campo">
+            <label for="nascimento">Data de Nascimento</label>
+            <input
+              type="text"
+              id="nascimento"
+              placeholder="DD/MM/AAAA"
+              maxlength="10"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="campo">
+          <label for="email">E-mail</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="Digite seu e-mail"
+            required
+          />
+        </div>
+
+        <div class="campo">
+          <label for="telefone">Telefone</label>
+          <input
+            type="tel"
+            id="telefone"
+            placeholder="(00) 00000-0000"
+            maxlength="15"
+            required
+          />
+        </div>
+
+        <div class="campo">
+          <label for="senha">Senha</label>
+          <div class="caixa-senha">
+            <input type="password" id="senha" placeholder="••••••••" required />
+
+            <button
+              type="button"
+              class="botao-olho"
+              aria-label="Mostrar ou ocultar senha"
+            >
+              <img
+                src="../assets/icon/olho.svg"
+                alt="Mostrar senha"
+                width="20"
+                height="20"
+              />
+            </button>
+          </div>
+        </div>
+
+        <button type="submit" class="botao-verde">Cadastrar</button>
+      </form>
+
+      <div class="rodape-modal">
+        <p>
+          Já tem uma conta?
+          <a
+            href="#"
+            class="trocar-modal"
+            data-fechar="modal-cadastro"
+            data-abrir="modal-login"
+          >
+            Entre
+          </a>
+        </p>
+      </div>
+    </dialog>
+
+    <!-- MODAL LOGIN -->
+    <dialog id="modal-login" class="caixa-modal">
+      <button
+        type="button"
+        class="fechar-modal"
+        data-modal="modal-login"
+        aria-label="Fechar modal"
+      >
+        X
+      </button>
+
+      <div class="topo-modal">
+        <div class="logo-modal">
+          <img src="../assets/icon/icon logo.png" alt="Logo Bolso Jovem" />
+          <span>Bolso <strong>Jovem</strong></span>
+        </div>
+
+        <h2>Acesse sua conta</h2>
+      </div>
+
+      <form id="form-login" class="formulario-modal">
+        <div class="campo">
+          <label for="login-usuario">E-mail ou CPF</label>
+          <input
+            type="text"
+            id="login-usuario"
+            placeholder="Digite seu e-mail"
+            required
+          />
+        </div>
+
+        <div class="campo">
+          <label for="login-senha">Senha</label>
+          <div class="caixa-senha">
+            <input
+              type="password"
+              id="login-senha"
+              placeholder="••••••••"
+              required
+            />
+
+            <button
+              type="button"
+              class="botao-olho"
+              aria-label="Mostrar ou ocultar senha"
+            >
+              <img
+                src="../assets/icon/olho.svg"
+                alt="Mostrar senha"
+                width="20"
+                height="20"
+              />
+            </button>
+          </div>
+        </div>
+
+        <a
+          href="#"
+          class="link-esqueci trocar-modal"
+          data-fechar="modal-login"
+          data-abrir="modal-recuperar"
+        >
+          Esqueci minha senha
+        </a>
+
+        <button type="submit" class="botao-verde botao-largo">Entrar</button>
+      </form>
+
+      <div class="rodape-modal">
+        <p>
+          Não tem conta?
+          <a
+            href="#"
+            class="trocar-modal"
+            data-fechar="modal-login"
+            data-abrir="modal-cadastro"
+          >
+            Cadastre-se
+          </a>
+        </p>
+      </div>
+    </dialog>
+
+    <!-- MODAL RECUPERAR SENHA -->
+    <dialog id="modal-recuperar" class="caixa-modal">
+      <button
+        type="button"
+        class="fechar-modal"
+        data-modal="modal-recuperar"
+        aria-label="Fechar modal"
+      >
+        X
+      </button>
+
+      <div class="topo-modal">
+        <div class="logo-modal">
+          <img src="../assets/icon/icon logo.png" alt="Logo Bolso Jovem" />
+          <span>Bolso <strong>Jovem</strong></span>
+        </div>
+
+        <h2>Recuperar senha</h2>
+
+        <p class="subtitulo-modal">
+          Informe seu e-mail ou CPF cadastrado para receber o link de
+          redefinição.
+        </p>
+      </div>
+
+      <form id="form-recuperar" class="formulario-modal">
+        <div class="campo">
+          <label for="recuperar-usuario">E-mail ou CPF</label>
+          <input
+            type="text"
+            id="recuperar-usuario"
+            placeholder="Digite seu e-mail ou CPF"
+            required
+          />
+        </div>
+
+        <button type="submit" class="botao-verde botao-largo">
+          Enviar instruções
+        </button>
+      </form>
+
+      <div class="rodape-modal">
+        <p>
+          Lembrou a senha?
+          <a
+            href="#"
+            class="trocar-modal"
+            data-fechar="modal-recuperar"
+            data-abrir="modal-login"
+          >
+            Voltar para o login
+          </a>
+        </p>
+      </div>
+    </dialog>
+
+    <!-- MODAL REGISTRO -->
+    <dialog id="modal-registro" class="caixa-modal">
+      <button
+        type="button"
+        class="fechar-modal"
+        data-modal="modal-registro"
+        aria-label="Fechar modal"
+      >
+        X
+      </button>
+
+      <h3 class="titulo-esquerda">Tipo de Lançamento</h3>
+
+      <div class="seletor-tipo">
+        <button type="button" class="opcao-tipo ativo" data-tipo="receita">
+          Receita
+        </button>
+
+        <button type="button" class="opcao-tipo" data-tipo="despesa">
+          Despesa
+        </button>
+      </div>
+
+      <form id="form-registro" class="formulario-modal">
+        <input type="hidden" id="tipo-lancamento" value="receita" />
+
+        <div class="campo">
+          <label for="descricao">Descrição</label>
+          <input
+            type="text"
+            id="descricao"
+            placeholder="Ex: Salário, Supermercado"
+            required
+          />
+        </div>
+
+        <div class="campo">
+          <label for="valor">Valor</label>
+          <input type="text" id="valor" placeholder="R$ 0,00" required />
+        </div>
+
+        <div class="campo">
+          <label for="categoria">Categoria</label>
+          <select id="categoria" required>
+            <option value="" disabled selected>Selecione uma categoria</option>
+            <option value="salario">Salário</option>
+            <option value="alimentacao">Alimentação</option>
+            <option value="transporte">Transporte</option>
+            <option value="lazer">Lazer</option>
+            <option value="educacao">Educação</option>
+            <option value="outros">Outros</option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <label for="data-registro">Data</label>
+          <div class="caixa-data">
+            <img
+              src="../assets/icon/calendario.svg"
+              alt=""
+              class="icone-calendario"
+              width="18"
+              height="18"
+            />
+
+            <input
+              type="text"
+              id="data-registro"
+              placeholder="DD/MM/AAAA"
+              maxlength="10"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="acoes-registro">
+          <button type="submit" class="botao-salvar">Salvar</button>
+
+          <button
+            type="button"
+            class="botao-cancelar fechar-modal"
+            data-modal="modal-registro"
+          ></button>
+        </div>
+      </form>
+    </dialog>
 
     <!-- Main -->
     <main class="main-registros">
@@ -258,6 +719,7 @@
       </div>
     </footer>
 
+    <script src="../js/modal.js"></script>
     <script src="../js/pages/meusRegistros.js"></script>
   </body>
 </html>

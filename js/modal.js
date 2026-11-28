@@ -201,3 +201,107 @@ if (formRegistro) {
     }
   });
 }
+
+/* =========================================
+   MENU LATERAL
+========================================= */
+
+// Seleciona os elementos do menu
+const botaoMenu = document.querySelector('.menu-hamburguer-header');
+const menuSobreposicao = document.getElementById('menu-sobreposicao');
+const menuLateral = document.getElementById('menu-lateral');
+const botaoFecharMenu = document.querySelector('.menu-fechar');
+
+// Verifica se os elementos existem
+if (botaoMenu && menuSobreposicao && menuLateral && botaoFecharMenu) {
+  // Guarda a posição de rolagem anterior
+  let rolagemAnterior = '';
+
+  // Abre o menu
+  function abrirMenu() {
+    if (!menuSobreposicao.hidden) return;
+
+    rolagemAnterior = document.body.style.overflow;
+
+    menuSobreposicao.hidden = false;
+    document.body.style.overflow = 'hidden';
+
+    botaoMenu.setAttribute('aria-expanded', 'true');
+
+    requestAnimationFrame(() => {
+      menuSobreposicao.classList.add('menu-visivel');
+      menuLateral.focus();
+    });
+  }
+
+  // Fecha o menu
+  function fecharMenu() {
+    if (menuSobreposicao.hidden) return;
+
+    menuSobreposicao.classList.remove('menu-visivel');
+
+    document.body.style.overflow = rolagemAnterior;
+    botaoMenu.setAttribute('aria-expanded', 'false');
+
+    // Aguarda a animação antes de esconder o menu
+    setTimeout(() => {
+      if (!menuSobreposicao.classList.contains('menu-visivel')) {
+        menuSobreposicao.hidden = true;
+        botaoMenu.focus();
+      }
+    }, 300);
+  }
+
+  // Clique no botão hambúrguer
+  botaoMenu.addEventListener('click', abrirMenu);
+
+  // Clique no botão X
+  botaoFecharMenu.addEventListener('click', fecharMenu);
+
+  // Fecha ao clicar na área escura
+  menuSobreposicao.addEventListener('click', (evento) => {
+    if (evento.target === menuSobreposicao) {
+      fecharMenu();
+    }
+  });
+
+  // Fecha ao clicar em Meu Perfil ou Novo Registro
+  const linksModalMenu = menuLateral.querySelectorAll('.abrir-modal');
+
+  linksModalMenu.forEach((link) => {
+    link.addEventListener('click', fecharMenu);
+  });
+
+  // Tecla Escape e controle de foco
+  document.addEventListener('keydown', (evento) => {
+    if (menuSobreposicao.hidden) return;
+
+    // Fecha o menu com Escape
+    if (evento.key === 'Escape') {
+      evento.preventDefault();
+      fecharMenu();
+      return;
+    }
+
+    // Mantém o foco dentro do menu
+    if (evento.key === 'Tab') {
+      const elementosFocaveis = menuLateral.querySelectorAll(
+        'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+      );
+
+      const primeiroElemento = elementosFocaveis[0];
+      const ultimoElemento = elementosFocaveis[elementosFocaveis.length - 1];
+
+      if (evento.shiftKey && document.activeElement === primeiroElemento) {
+        evento.preventDefault();
+        ultimoElemento.focus();
+      } else if (
+        !evento.shiftKey &&
+        document.activeElement === ultimoElemento
+      ) {
+        evento.preventDefault();
+        primeiroElemento.focus();
+      }
+    }
+  });
+}
